@@ -183,6 +183,7 @@ export { map, constant, tap, ap }
  * @param {function(*):*} f mapping function
  * @returns {Stream} stream containing items transformed by f
  */
+Stream.prototype['fantasy-land/map'] =
 Stream.prototype.map = function (f) {
   return map(f, this)
 }
@@ -193,6 +194,7 @@ Stream.prototype.map = function (f) {
  * @param {Stream} xs stream of items to which
  * @returns {Stream} stream containing the cross product of items
  */
+Stream.prototype['fantasy-land/ap'] =
 Stream.prototype.ap = function (xs) {
   return ap(this, xs)
 }
@@ -246,6 +248,7 @@ export { flatMap, flatMap as chain, join }
  * @param {function(x:*):Stream} f chaining function, must return a Stream
  * @returns {Stream} new stream containing all events from each stream returned by f
  */
+Stream.prototype['fantasy-land/chain'] =
 Stream.prototype.chain = function (f) {
   return flatMap(f, this)
 }
